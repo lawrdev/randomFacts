@@ -1,0 +1,95 @@
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.navbar {
+  @apply shadow sticky top-0 pt-2;
+}
+
+.nav {
+  margin: 0px auto;
+  padding: 14px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.nav a {
+  margin-left: 12px;
+}
+
+.logowrapper {
+  @apply flex mr-auto items-end;
+}
+
+.logowrapper h1 {
+  @apply font-extrabold text-base;
+
+  animation: bounce 1s;
+  animation-iteration-count: 3.5;
+  animation-fill-mode: none;
+}
+
+.logopaint {
+  color: #a3195b;
+}
+
+.navbtn {
+  --color: #a3195b;
+  --color-hover: #fff;
+  --color-bg: #f2f2f2;
+  --color-bg-hover: #a3195b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  width: fit-content;
+  padding: 3px 16px;
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+  z-index: 1;
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 600;
+
+  color: var(--color);
+  background-color: var(--color-bg);
+  border: 2px solid var(--color);
+}
+
+.navbtn:hover {
+  color: var(--color-hover);
+  transition-delay: 0.5s;
+}
+
+.navbtn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 30%;
+  top: 100%;
+  left: 100%;
+  transition: all 1.5s;
+}
+
+.navbtn:hover::before {
+  background: var(--color);
+  top: -30px;
+  left: -30px;
+  transition: all 1.5s;
+}
