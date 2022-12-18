@@ -12,6 +12,9 @@
 
 .navbar {
   @apply shadow sticky top-0 pt-2;
+
+  backdrop-filter: blur(10px);
+  z-index: 100;
 }
 
 .nav {
@@ -26,8 +29,14 @@
   margin-left: 12px;
 }
 
+.navbarContainer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
 .logowrapper {
-  @apply flex mr-auto items-end;
+  @apply w-fit flex mr-auto items-end;
 }
 
 .logowrapper h1 {
