@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import { Divider } from "@mui/material";
@@ -11,11 +11,13 @@ const navs = [
 ];
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarContainer}>
         <nav className={styles.nav}>
-          <div className={styles.logowrapper}>
+          <div className={styles.logowrapper} onClick={() => router.push("/")}>
             <Image
               src="/owl_pink.svg"
               alt="logo"

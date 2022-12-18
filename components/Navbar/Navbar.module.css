@@ -36,7 +36,7 @@
 }
 
 .logowrapper {
-  @apply w-fit flex mr-auto items-end;
+  @apply w-fit flex mr-auto items-end cursor-pointer;
 }
 
 .logowrapper h1 {
@@ -74,7 +74,7 @@
   font-weight: 600;
 
   color: var(--color);
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
   border: 2px solid var(--color);
 }
 
