@@ -151,6 +151,13 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
           <div className="mt-10 mb-9" onMouseLeave={handleRemovePreview}>
             {factsArray?.map((item, index) => (
               <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-mirror="true"
+                data-aos-easing="ease-in-out"
+                data-aos-once="false"
                 key={index}
                 className={`${styles.factItem} max-w-2xl my-3 py-3 px-6 active:scale-95 select-none`}
                 onMouseOver={() => handlePreview(item.image)}
@@ -166,6 +173,13 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
             ))}
             {previewImage ? (
               <div
+                data-aos="zoom-in-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-delay="50"
+                data-aos-duration="300"
+                data-aos-mirror="true"
+                data-aos-easing="ease-in-out"
+                data-aos-once="false"
                 className="hidden md:block fixed top-1/2 right-0 rounded-xl overflow-hidden shadow-xl bg-white"
                 style={{ zIndex: 80, width: "320px", height: "180px" }}
               >
@@ -186,11 +200,27 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
 
           <div className="max-w-sm w-full mx-auto">
             {noMoreFacts ? (
-              <p className="font-semibold text-sm text-center">
+              <p
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-mirror="true"
+                data-aos-easing="ease-in-out"
+                data-aos-once="false"
+                className="font-semibold text-sm text-center"
+              >
                 No more facts....
               </p>
             ) : (
               <button
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-mirror="true"
+                data-aos-easing="ease-in-out"
+                data-aos-once="false"
                 className="w-full py-2 rounded-lg bg-primary text-white"
                 onClick={onFetchMoreFacts}
               >
