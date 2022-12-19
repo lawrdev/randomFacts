@@ -34,6 +34,7 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
   const [previewImage, setPreviewImage] = useState("");
   const [lastFetchedFact, setLastFetchedFact] = useState<any>(lastVisible);
   const [noMoreFacts, setNoMoreFacts] = useState(false);
+  const [randomNu] = useState(Math.floor(Math.random() * (4 - 0)) + 0);
   const router = useRouter();
 
   const handlePreview = (img: string) => {
@@ -103,7 +104,7 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
       <main>
         <section className="mt-10 mb-20">
           <h2 className="text-center text-2xl font-extrabold text-gray-800 mb-1 ml-auto">
-            FACT OF THE DAY
+            DID YOU KNOW?
           </h2>
           <div className="">
             <Divider />
@@ -120,7 +121,7 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
               <div className="p-1 bg-white w-fit rounded-3xl mx-auto mb-5 shadow-md">
                 <Image
                   className="rounded-3xl"
-                  src={factsArray ? factsArray[2]?.image : ""}
+                  src={factsArray ? factsArray[randomNu]?.image : ""}
                   alt="fun fact"
                   width={410}
                   height={260}
@@ -135,9 +136,9 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
 
             <div className="ffInfo text-center md:text-start w-full md:max-w-lg">
               <h3 className="font-bold text-xl text-primary mb-3">
-                {factsArray[2]?.title}
+                {factsArray[randomNu]?.title}
               </h3>
-              <p className="text-gray-500">{factsArray[2]?.info}</p>
+              <p className="text-gray-500">{factsArray[randomNu]?.info}</p>
             </div>
           </div>
         </section>
