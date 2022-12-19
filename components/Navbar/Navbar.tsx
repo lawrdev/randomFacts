@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import { Divider } from "@mui/material";
+import Menu from "./hamburger/Menu";
 
 const navs = [
   { option: "Home", route: "/" },
@@ -35,11 +36,17 @@ const Navbar = () => {
             </h1>
           </div>
 
-          {navs.map((nav, i: number) => (
-            <Link href={nav.route} className={styles.navbtn} key={i}>
-              {nav.option}
-            </Link>
-          ))}
+          <div className="hidden sm:flex sm:gap-1">
+            {navs.map((nav, i: number) => (
+              <Link href={nav.route} className={styles.navbtn} key={i}>
+                {nav.option}
+              </Link>
+            ))}
+          </div>
+
+          <div className="block sm:hidden">
+            <Menu />
+          </div>
         </nav>
       </div>
 
