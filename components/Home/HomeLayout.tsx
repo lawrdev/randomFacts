@@ -151,26 +151,24 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
 
           <div className="mt-10 mb-9" onMouseLeave={handleRemovePreview}>
             {factsArray?.map((item, index) => (
-              <div
-                data-aos="fade-up"
-                data-aos-anchor-placement="center-bottom"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-mirror="true"
-                data-aos-easing="ease-in-out"
-                data-aos-once="false"
-                key={index}
-                className={`${styles.factItem} max-w-2xl my-3 py-3 px-6 active:scale-95 select-none`}
-                onMouseOver={() => handlePreview(item.image)}
-                onClick={() => router.push(`/fact/${item.id}`)}
-              >
-                <p className="flex-grow font-bold text-primary ">
-                  <span className="text-2xl mr-4 text-cursive">
-                    {index + 1}.
-                  </span>
-                  {item.title}
-                </p>
-              </div>
+              <Link key={index} href={`/fact/${item.id}`} className="block">
+                <div
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="center-bottom"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-mirror="true"
+                  data-aos-easing="ease-in-out"
+                  data-aos-once="false"
+                  className={`${styles.factItem} max-w-2xl my-3 py-3 px-6 active:scale-95 select-none`}
+                  onMouseOver={() => handlePreview(item.image)}
+                >
+                  <p className="flex-grow font-bold text-primary ">
+                    <span className="text-2xl mr-4 italic">{index + 1}.</span>
+                    {item.title}
+                  </p>
+                </div>
+              </Link>
             ))}
             {previewImage ? (
               <div
@@ -222,7 +220,7 @@ function HomeLayout({ data, success, lastVisible }: HomeLayoutProps) {
                 data-aos-mirror="true"
                 data-aos-easing="ease-in-out"
                 data-aos-once="false"
-                className="w-full py-2 rounded-lg bg-primary text-white"
+                className="w-full py-2 rounded-lg bg-primary font-bold text-lg text-white"
                 onClick={onFetchMoreFacts}
               >
                 Load more
